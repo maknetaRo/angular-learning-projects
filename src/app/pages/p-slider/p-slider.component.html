@@ -1,2 +1,7 @@
-<p>p-slider works!</p>
-<p>ToDo</p>
+<div class="slider-wrapper">
+  <button (click)="previousImage()">Prev</button>
+  <div class="slider">
+    <img [src]="image" alt="" />
+  </div>
+  <button (click)="nextImage()">Next</button>
+</div>
