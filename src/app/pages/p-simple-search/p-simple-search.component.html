@@ -1,1 +1,28 @@
-<p>p-simple-search works!</p>
+<h1>simple search</h1>
+
+<label for="search">Search</label>
+<input
+  type="search"
+  id="search"
+  [formControl]="keyword"
+  (keyup)="filterImages()"
+/>
+
+<div
+  style="
+    margin: 2rem;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  "
+>
+  @for (image of filteredImages; track $index) {
+  <div style="display: flex; flex-direction: column">
+    <img [src]="image.url" [alt]="image.title" />
+    <p>{{ image.title }}</p>
+  </div>
+
+  }
+</div>
