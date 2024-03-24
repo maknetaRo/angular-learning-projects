@@ -1,0 +1,70 @@
+<main style="background-color: aquamarine; width: 100%; height: 100vh">
+  <h1>Pass a message</h1>
+
+  <div
+    style="
+      padding: 1rem;
+      margin: 2em;
+      max-width: 550px;
+      background-color: whitesmoke;
+    "
+  >
+    <p>{{ sentMessage }}</p>
+  </div>
+
+  <form
+    [formGroup]="form"
+    (ngSubmit)="sendMessage()"
+    style="
+      padding-block: 1rem;
+      margin: 2em;
+      display: flex;
+      flex-direction: column;
+    "
+  >
+    <label for="message">Your message</label>
+    <textarea
+      formControlName="message"
+      type="text"
+      name="message"
+      style="
+        max-width: 550px;
+        background-color: whitesmoke;
+        padding: 1rem;
+        margin-block: 1em;
+      "
+    ></textarea>
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        margin-block: 2rem;
+        max-width: 550px;
+      "
+    >
+      <button
+        type="submit"
+        style="
+          max-width: 200px;
+          width: 100%;
+          height: 60px;
+          background-color: antiquewhite;
+        "
+      >
+        Press Here To Send
+      </button>
+      <button
+        (click)="resetForm()"
+        type="button"
+        style="
+          max-width: 200px;
+          width: 100%;
+          height: 60px;
+          background-color: antiquewhite;
+        "
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</main>
