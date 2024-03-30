@@ -1,0 +1,56 @@
+<div>
+  <label for="borderWidth">Border width:</label>
+  <input
+    type="range"
+    id="borderWidth"
+    min="0"
+    max="50"
+    [formControl]="brWidth"
+  />
+
+  Border width: {{ brWidth.value }}
+</div>
+<div>
+  <label for="brColor">Border color:</label>
+  <input type="color" id="brcolor" [formControl]="brColor" value="#f6b73c" />
+
+  Border color: {{ brColor.value }}
+</div>
+
+<div>
+  <label for="borderRadius">Border radius:</label>
+  <input
+    type="range"
+    id="borderRadius"
+    min="0"
+    max="50"
+    [formControl]="brRadius"
+  />
+
+  Border width: {{ brRadius.value }} %
+</div>
+
+<div>
+  <label for="sepiaFilter">Sepia filter:</label>
+  <input
+    type="range"
+    id="sepiaFilter"
+    min="0"
+    max="100"
+    [formControl]="sepiaFilter"
+  />
+</div>
+
+<div style="padding-block: 4rem; display: flex; place-content: center">
+  <img
+    src="https://picsum.photos/id/30/400/400"
+    alt=""
+    [style]="{
+      borderWidth: brWidth.value + 'px',
+      borderStyle: 'solid',
+      borderColor: brColor.value,
+      borderRadius: brRadius.value + '%',
+      filter: 'sepia(' + sepiaFilter.value + '%)'
+    }"
+  />
+</div>

@@ -3,6 +3,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { PHomeComponent } from './pages/p-home/p-home.component';
 import { OHeaderComponent } from './components/shared/organisms/o-header/o-header.component';
 import { OFooterComponent } from './components/shared/organisms/o-footer/o-footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { OFooterComponent } from './components/shared/organisms/o-footer/o-foote
     OFooterComponent,
     RouterLink,
     RouterLinkActive,
+    ReactiveFormsModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
